@@ -9,17 +9,20 @@ import logo from "@/app/icon.png";
 import config from "@/config";
 
 const links = [
+
+
+ 
   {
-    href: "/#pricing",
-    label: "Pricing",
+    href: "/library",
+    label: "My Library",
   },
   {
-    href: "/#testimonials",
-    label: "Reviews",
-  },
-  {
-    href: "/#faq",
+    href: "/pricing",
     label: "FAQ",
+  },
+  {
+    href: "/pricing",
+    label: "Pricing",
   },
 ];
 
@@ -37,7 +40,7 @@ const Header = () => {
   }, [searchParams]);
 
   return (
-    <header className="bg-base">
+    <header className="">
       <nav
         className="container flex items-center justify-between px-8 py-4 mx-auto"
         aria-label="Global"
@@ -58,7 +61,7 @@ const Header = () => {
               width={32}
               height={32}
             />
-            <span className="font-extrabold text-lg">{config.appName}</span>
+            <span className="font-extrabold text-3xl">{config.appName}</span>
           </Link>
         </div>
         {/* Burger button to open menu on mobile */}
@@ -87,7 +90,7 @@ const Header = () => {
         </div>
 
         {/* Your links on large screens */}
-        <div className="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center text-3xl">
+        <div className="hidden lg:flex text-3xl lg:justify-center lg:gap-12 lg:items-center">
           {links.map((link) => (
             <Link
               href={link.href}
