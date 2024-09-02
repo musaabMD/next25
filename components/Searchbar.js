@@ -5,7 +5,6 @@ import { Star, ThumbsUp, BookOpen, Book, BookMarked } from 'lucide-react';
 import { dummyBooks, dummyRecommendations, dummyAuthors } from '../app/data/books';
 import Header from '@/components/Header';
 import Image from 'next/image';
-import { Suspense } from 'react';
 
 const placeholderImage = '/authorthumbnail.webp';
 
