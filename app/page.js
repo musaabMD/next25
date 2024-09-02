@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Star, ThumbsUp, BookOpen, Book, BookMarked } from 'lucide-react';
 import { dummyBooks, dummyRecommendations, dummyAuthors } from './data/book';
 import Header from '@/components/Header';
+import Hero from '@/components/Hero';
 
 const placeholderImage = '/authorthumbnail.webp';
 
@@ -160,6 +161,7 @@ export default function NextBookHomepage() {
     <div className="min-h-screen text-gray-100">
       <Suspense fallback={<div>Loading header...</div>}>
         <Header />
+    
       </Suspense>
       <div className="flex flex-col items-center pt-10 px-4">
         <div className="text-6xl font-bold mb-8 text-yellow-300">Where knowledge begins  </div>
@@ -210,6 +212,7 @@ export default function NextBookHomepage() {
           )}
         </Suspense>
 
+
         <Suspense fallback={<div>Loading authors...</div>}>
           {/* Render Authors */}
           {selectedCategory === 'Authors' && (
@@ -248,6 +251,8 @@ export default function NextBookHomepage() {
         {/* No matches found */}
         {filteredAuthors.length === 0 && filteredRecommendations.length === 0 && filteredBooks.length === 0 && (
           <div className="text-white text-center">No matches found.</div>
+      
+
         )}
       </div>
     </div>

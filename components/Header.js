@@ -13,7 +13,7 @@ const links = [
 
  
   {
-    href: "/library",
+    href: "/dashboard",
     label: "My Library",
   },
   {

@@ -1,0 +1,45 @@
+.hero-container {
+  padding: 100px 0;
+  background-color: #fafafa; /* Background color to match the image */
+}
+
+.textCenter {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.highlight {
+  color: #0366d6;
+  text-decoration: underline wavy #0366d6;
+}
+
+.btnPrimary {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #0366d6;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.btnPrimary:hover {
+  background-color: #024cad;
+  transform: translateY(-2px);
+}
+
+.textLg {
+  font-size: 1.125rem;
+}
+
+.textYellow500 {
+  color: #f59e0b;
+}
