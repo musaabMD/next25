@@ -2,7 +2,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 import { Star, ThumbsUp, BookOpen, Book, BookMarked } from 'lucide-react';
-import { dummyBooks, dummyRecommendations, dummyAuthors } from '../app/data/books';
+import { dummyBooks, dummyRecommendations, dummyAuthors } from '../app/data/book';
 import Header from '@/components/Header';
 import Image from 'next/image';
 
