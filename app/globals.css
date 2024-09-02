@@ -20,3 +20,14 @@ progress::-webkit-progress-value {
     @apply !capitalize;
   }
 }
+/* Hide Navbar by default */
+/* globals.css or wherever you manage your global styles */
+.btm-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .btm-nav {
+      display: flex;
+  }
+}
