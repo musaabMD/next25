@@ -162,7 +162,7 @@ export default function NextBookHomepage() {
         <Header />
       </Suspense>
       <div className="flex flex-col items-center pt-10 px-4">
-        <div className="text-6xl font-bold mb-8 text-yellow-300">NextBook</div>
+        <div className="text-6xl font-bold mb-8 text-yellow-300">Where knowledge begins  </div>
         <div className="w-full max-w-2xl mb-6">
           <Suspense fallback={<div>Loading search...</div>}>
             <input
