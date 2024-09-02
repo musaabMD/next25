@@ -5,7 +5,7 @@ import { Suspense, useState } from "react";
 import { createClient } from "@/libs/supabase/client";
 import toast from "react-hot-toast";
 import config from "@/config";
-
+import Header from "@/components/Header";
 // This a login/singup page for Supabase Auth.
 // Successfull login redirects to /api/auth/callback where the Code Exchange is processed (see app/api/auth/callback/route.js).
 export default function Login() {
@@ -54,7 +54,7 @@ export default function Login() {
     <>
     <Suspense>
 
-
+<Header/>
 
    
     <main className="p-8 md:p-24" data-theme={config.colors.theme}>
