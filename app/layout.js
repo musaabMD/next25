@@ -1,74 +1,43 @@
-// import { Inter } from "next/font/google";
-// import PlausibleProvider from "next-plausible";
-// import { getSEOTags } from "@/libs/seo";
-// import ClientLayout from "@/components/LayoutClient";
-// import config from "@/config";
-// import "./globals.css";
-
-// const font = Inter({ subsets: ["latin"] });
-
-// export const viewport = {
-//   // Will use the primary color of your theme to show a nice theme color in the URL bar of supported browsers
-//   themeColor: config.colors.main,
-//   width: "device-width",
-//   initialScale: 1,
-// };
-
-// // This adds default SEO tags to all pages in our app.
-// // You can override them in each page passing params to getSOTags() function.
-// export const metadata = getSEOTags();
-
-// export default function RootLayout({ children }) {
-//   return (
-//     <html lang="en" data-theme={config.colors.theme} className={font.className}>
-//       {config.domainName && (
-//         <head>
-//           <PlausibleProvider domain={config.domainName} />
-//         </head>
-//       )}
-//       <body>
-//         {/* ClientLayout contains all the client wrappers (Crisp chat support, toast messages, tooltips, etc.) */}
-//         <ClientLayout>{children}</ClientLayout>
-//       </body>
-//     </html>
-//   );
-// }
+// Import necessary libraries and components
 import { Inter } from "next/font/google";
 import PlausibleProvider from "next-plausible";
 import { getSEOTags } from "@/libs/seo";
 import ClientLayout from "@/components/LayoutClient";
-import Navbar from "@/components/Tabbar"; // Make sure the path is correct
+import Navbar from "@/components/Tabbar"; // Ensure the path to Tabbar is correct
 import config from "@/config";
 import "./globals.css";
 import { Suspense } from "react";
+
+// Set up the font using the Inter family from Google Fonts
 const font = Inter({ subsets: ["latin"] });
 
+// Define viewport and metadata settings for SEO
 export const viewport = {
-  themeColor: config.colors.main,
-  width: "device-width",
-  initialScale: 1,
+  themeColor: config.colors.main, // Uses the primary color for browser theme
+  width: "device-width", // Sets the viewport width to match the device's width
+  initialScale: 1, // Sets the initial zoom level when the page is first loaded
 };
 
-export const metadata = getSEOTags();
+export const metadata = getSEOTags(); // Retrieves default SEO tags, can be overridden per page
 
+// Define the RootLayout component
 export default function RootLayout({ children }) {
   return (
-
-  
-
-
-  
     <html lang="en" data-theme={config.colors.theme} className={font.className}>
       {config.domainName && (
         <head>
-          <PlausibleProvider domain={config.domainName} />
+          <PlausibleProvider domain={config.domainName}>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <style>{`body { margin: 0; font-family: ${font.className}; }`}</style>
+          </PlausibleProvider>
         </head>
       )}
       <body>
-        {/* Include Navbar here to make it part of the ClientLayout */}
         <ClientLayout>
-          <Navbar className="navbar" /> {/* Add the class for responsive control */}
-          {children}
+          <Navbar className="block md:hidden" /> {/* Show on small screens, hide on md and larger */}
+          <Suspense fallback={<div>Loading...</div>}>
+            {children} {/* Render child components, which represent page content */}
+          </Suspense>
         </ClientLayout>
       </body>
     </html>

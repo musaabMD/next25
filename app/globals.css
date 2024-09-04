@@ -20,14 +20,37 @@ progress::-webkit-progress-value {
     @apply !capitalize;
   }
 }
+
+/* Navbar visibility settings */
 /* Hide Navbar by default */
-/* globals.css or wherever you manage your global styles */
 .btm-nav {
-  display: none;
+  display: none; /* Hide on larger screens */
 }
 
 @media (max-width: 768px) {
   .btm-nav {
-      display: flex;
+    display: flex; /* Show only on small screens */
   }
+}
+
+.btm-nav button {
+  color: #333; /* Default text color */
+  transition: background-color 0.3s, fill 0.3s; /* Smooth transitions */
+}
+
+.btm-nav button:hover,
+.btm-nav button.active {
+  background-color: #f0f0f0; /* Light grey background on hover and active */
+  fill: #000; /* Black fill for SVG on active */
+}
+
+.btm-nav button.active svg {
+  fill: currentColor; /* Ensure the SVG icon uses the current text color */
+}
+
+/* Ensure full width and layout */
+.btm-nav button {
+  width: 100%; /* Full width for each button */
+  text-align: center; /* Center the text */
+  padding: 8px 0; /* Padding for better touch targets */
 }
