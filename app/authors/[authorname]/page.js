@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { dummyAuthors, dummyBooks } from '@/app/data/book';
 import Header from '@/components/Header';
-
+import { Suspense } from 'react';
 export default function AuthorDetailPage() {
   const { authorname } = useParams();
   const [author, setAuthor] = useState(null);
@@ -26,6 +26,8 @@ export default function AuthorDetailPage() {
   if (!author) {
     return (
       <>
+            <Suspense>
+
         <Header />
         <div className="flex justify-center items-center h-screen bg-gray-900">
           <div className="text-center text-white">
@@ -33,12 +35,16 @@ export default function AuthorDetailPage() {
             <p className="text-xl">Sorry, we couldn't find the author you're looking for.</p>
           </div>
         </div>
+        </Suspense>
+
       </>
     );
   }
 
   return (
     <>
+          <Suspense>
+
       <Header />
       <div className="min-h-screen bg-gray-900 text-white p-8">
         <div className="max-w-4xl mx-auto">
@@ -82,6 +88,8 @@ export default function AuthorDetailPage() {
           </div>
         </div>
       </div>
+      <Suspense>
+
     </>
   );
 }
