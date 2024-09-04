@@ -43,7 +43,7 @@ export default function AuthorDetailPage() {
 
   return (
     <>
-          <Suspense>
+<Suspense>
 
       <Header />
       <div className="min-h-screen bg-gray-900 text-white p-8">
@@ -88,7 +88,7 @@ export default function AuthorDetailPage() {
           </div>
         </div>
       </div>
-      <Suspense>
+      </Suspense>
 
     </>
   );
