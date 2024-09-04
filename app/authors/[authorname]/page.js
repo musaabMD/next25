@@ -32,7 +32,7 @@ export default function AuthorDetailPage() {
         <div className="flex justify-center items-center h-screen bg-gray-900">
           <div className="text-center text-white">
             <h1 className="text-4xl font-bold mb-4">Author Not Found</h1>
-            <p className="text-xl">Sorry, we couldn't find the author you're looking for.</p>
+            <p className="text-xl">Sorrooking for.</p>
           </div>
         </div>
         </Suspense>

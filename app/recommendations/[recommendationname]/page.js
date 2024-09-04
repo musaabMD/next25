@@ -33,7 +33,7 @@ export default function RecommendationDetailPage() {
         <div className="flex justify-center items-center h-screen bg-gray-900">
           <div className="text-center text-white">
             <h1 className="text-4xl font-bold mb-4">Recommendation Not Found</h1>
-            <p className="text-xl">Sorry, we couldn't find the recommendation you're looking for.</p>
+            <p className="text-xl">Sorry,  for.</p>
           </div>
         </div>
         </Suspense>
