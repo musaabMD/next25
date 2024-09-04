@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { dummyBooks, dummyAuthors } from '@/app/data/book';
 import Header from '@/components/Header';
-
+import { Suspense } from 'react';
 export default function BookDetailPage() {
   const { bookname } = useParams();
   const [book, setBook] = useState(null);
@@ -25,6 +25,8 @@ export default function BookDetailPage() {
   if (!book) {
     return (
       <>
+            <Suspense>
+
         <Header />
         <div className="flex justify-center items-center h-screen bg-gray-900">
           <div className="text-center text-white">
@@ -32,12 +34,16 @@ export default function BookDetailPage() {
             <p className="text-xl">Sorry, we couldn't find the book you're looking for.</p>
           </div>
         </div>
+        </Suspense>
+
       </>
     );
   }
 
   return (
     <>
+          <Suspense>
+
       <Header />
       <div className="min-h-screen bg-gray-900 text-white p-8">
         <div className="max-w-4xl mx-auto">
@@ -68,6 +74,8 @@ export default function BookDetailPage() {
           </div>
         </div>
       </div>
+      </Suspense>
+
     </>
   );
 }
